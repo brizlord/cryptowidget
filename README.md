@@ -1,5 +1,5 @@
 # Cryptowidget
-Ionic Framework project
+Ionic Framework project <br>
 App to check the states of the dogecoin and bitcoin wallets:<br>
 -Received coins<br>
 -Sent coins<br>
