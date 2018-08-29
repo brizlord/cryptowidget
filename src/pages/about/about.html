@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-navbar color="dark">
+        <ion-title>
+            Crypowidget
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-row>
+        <ion-col text-center>
+            <img width="150" src="assets/imgs/logo.png">
+            <h5>Developed by</h5>
+            <h5>Pablo R. Brizuela Chirino</h5>
+            <h6>brizuelap5@gmail.com</h6>
+            <br>
+            <hr>
+            <h6>Contribution</h6>
+
+            <ion-row>
+                <ion-col col-6>
+                    <small>BTC</small>
+                    <br>
+                    <a id="addressWalletBTC" (click)="copyboard('#addressWalletBTC')">
+                        <small>1AJJ8BhmhAMr2e1ZNG9Yqtm9yxU5qWQUez</small>
+                    </a>
+                    <br>
+                    <img width="120"
+                         src="assets/imgs/myBtcWallet.png">
+                </ion-col>
+
+                <ion-col col-6>
+                    <small>DOGE</small>
+                    <br>
+                    <a id="addressWalletDoge" (click)="copyboard('#addressWalletDoge')">
+                        <small>DA257dJEsUfy2h1y86Z3QYBEuyqDAJvopY</small>
+                    </a>
+                    <br>
+                    <img width="130"
+                         src="assets/imgs/myDogeWallet.png">
+                </ion-col>
+            </ion-row>
+
+            <br>
+
+            <div class="divider"></div>
+            <br>
+            <small>2018</small>
+        </ion-col>
+    </ion-row>
+</ion-content>

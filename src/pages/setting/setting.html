@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-navbar color="dark">
+        <ion-title>
+            Crypowidget
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-row>
+        <ion-col>
+            <ion-item>
+                <ion-label>Dogecoin</ion-label>
+                <ion-toggle [(ngModel)]="isDoge" checked="false"></ion-toggle>
+            </ion-item>
+
+            <div *ngIf="isDoge" text-center>
+                <button ion-button clear (click)="qrScan('doge')">
+                    <ion-icon name="qr-scanner"></ion-icon>
+                </button>
+            </div>
+
+            <ion-item *ngIf="isDoge" text-center>
+                <ion-input [(ngModel)]="dogeAddrr" placeholder="Doge's address" type="text" value=""></ion-input>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+    <br>
+    <ion-row>
+        <ion-col>
+            <ion-item>
+                <ion-label>Bitcoin</ion-label>
+                <ion-toggle [(ngModel)]="isBtc" checked="false"></ion-toggle>
+            </ion-item>
+
+            <div *ngIf="isBtc" text-center>
+                <button ion-button clear (click)="qrScan('btc')">
+                    <ion-icon name="qr-scanner"></ion-icon>
+                </button>
+            </div>
+
+            <ion-item *ngIf="isBtc">
+                <ion-input [(ngModel)]="btcAddrr" placeholder="BTC's address" type="text" value=""></ion-input>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+
+    <button class="saveFixedButton" ion-button color="secondary" (click)="saveAddrr()">Save</button>
+</ion-content>
+

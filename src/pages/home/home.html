@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-navbar color="dark">
+        <ion-title>
+            <img width="32" src="assets/imgs/logo.png"> Crypowidget
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only color="royal" (click)="settingOps($event)">
+                <ion-icon name="more"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="background"></div>
+    <div class="backgroundgray"></div>
+
+    <br>
+    <div style="text-align:center">
+        <h1>
+            Welcome to Cryptowidget!
+        </h1>
+    </div>
+
+    <br>
+    <br>
+    <ion-row>
+        <ion-col col-sm-6 col-md-4 *ngFor="let item of addresses">
+            <ion-card (click)="openWallet(item)">
+                <ion-card-header text-center>
+                    <img class="coinImg"
+                         src="assets/imgs/{{item.type}}.png"/>
+                    {{item.type}}
+                </ion-card-header>
+                <ion-card-content text-center>
+                    <ion-badge *ngIf="!isLoading">{{item.balance}}</ion-badge>
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
+    </ion-row>
+</ion-content>

@@ -1,0 +1,75 @@
+<ion-header>
+    <ion-navbar color="dark">
+        <ion-title>
+            Crypowidget
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-row>
+        <ion-col col-12 text-center>
+            <ion-row>
+                <ion-col>
+                    <img width="64" src="assets/imgs/{{address.type}}.png" alt="coin">
+
+                    <h6 *ngIf="marketValue.price!='0'">$ {{marketValue.price}}</h6>
+                    <h6 *ngIf="coinMarketPrice!=0"
+                        [ngClass]="{'lowValue':marketValue.change24h<0,'highValue':marketValue.change24h>0}">
+                        <ion-icon *ngIf="marketValue.change24h>0" name="arrow-dropup"></ion-icon>
+                        <ion-icon *ngIf="marketValue.change24h<0" name="arrow-dropdown"></ion-icon>
+                        {{marketValue.change24h}}
+                    </h6>
+                </ion-col>
+            </ion-row>
+
+            <div class="row">
+                <div class="col s12">
+                    <a id="addressWallet" (click)="copyboard()">{{address.address}}</a>
+                </div>
+            </div>
+
+            <div class="row" *ngIf="address.type=='DOGE'">
+                <div class="col s12">
+                    <img width="150" src="https://dogechain.info/api/v1/address/qrcode/{{address.address}}">
+                </div>
+            </div>
+
+            <div class="row" *ngIf="address.type=='BTC'">
+                <div class="col s12">
+                    <img width="150"
+                         src="https://api.qrserver.com/v1/create-qr-code/?size=128x128&data={{address.address}}">
+                </div>
+            </div>
+
+            <ion-row>
+                <ion-col text-center>
+                    <ion-badge>$ {{round(address.balance*marketValue.price)}}</ion-badge>
+                </ion-col>
+            </ion-row>
+
+            <br>
+            <hr>
+
+            <ion-row>
+                <ion-col col-sm-6>
+                    <h5>
+                        Sent
+                    </h5>
+                    <h6>
+                        {{inOut?.sent}}
+                    </h6>
+                </ion-col>
+
+                <ion-col col-sm-6>
+                    <h5>
+                        Received
+                    </h5>
+                    <h6>
+                        {{inOut?.received}}
+                    </h6>
+                </ion-col>
+            </ion-row>
+        </ion-col>
+    </ion-row>
+</ion-content>

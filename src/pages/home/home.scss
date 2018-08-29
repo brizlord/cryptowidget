@@ -1,0 +1,29 @@
+page-home {
+.coinImg {
+    width: 50%;
+    margin-left:25%;
+}
+
+.background{
+position:fixed;
+z-index:0;
+filter:grayscale(0.5);
+filter:blur(6px);
+left:0px;
+height:100%;
+width:100%;
+background:url('../assets/imgs/logo.png');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+opacity:0.2;
+}
+
+.content-md{
+background: #dedede;
+}
+
+.addButton{
+margin-top:45%;
+}
+}
