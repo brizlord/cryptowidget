@@ -9,7 +9,8 @@ App to check the states of the dogecoin and bitcoin wallets:<br>
 You can add wallets from Setting menu, even scanning QR code.
 
 # Prerequisite
-Ionic Framework, 
+Ionic Framework 
+<br>
 Cordova (Optional)
 
 # Installation
